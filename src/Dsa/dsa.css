@@ -1,0 +1,120 @@
+.Dsa-div {
+    padding-top: 37px ;
+    display: flex ;
+    justify-content: center ;
+    align-items: center;
+    width: 100vw ;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    cursor: default ;
+}
+
+.grid-3 {
+    display: grid;
+    margin: 30px 0;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 80%;
+    max-width: 1000px;
+}
+
+.grid-3 div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    height: 150px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    background-color: #ffffff;
+}
+
+.grid-3 div:nth-child(1) {
+    background-color: #FFA07A;
+}
+
+.grid-3 div:nth-child(2) {
+    background-color: #ADD8E6;
+}
+
+.grid-3 div:nth-child(3) {
+    background-color: #90EE90;
+}
+
+.grid-3 div:nth-child(4) {
+    background-color: #FFD700;
+}
+
+.grid-3 div:nth-child(5) {
+    background-color: #FFB6C1;
+}
+
+.grid-3 div::before {
+    content: '';
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100px;
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.grid-3 div:nth-child(1)::before {
+    background-image: url('/stack.png');
+}
+
+.grid-3 div:nth-child(2)::before {
+    background-image: url('/queue.png');
+}
+
+.grid-3 div:nth-child(3)::before {
+    background-image: url('/linear-search.png');
+}
+
+.grid-3 div:nth-child(4)::before {
+    background-image: url('/binary-search.png');
+}
+
+.grid-3 div:nth-child(5)::before {
+    background-image: url('/Os-scheduling.png');
+}
+
+.grid-3 div h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.grid-3 div p {
+    margin: 5px 0 0 0;
+    font-size: 14px;
+    color: #555;
+    text-align: center;
+}
+
+.grid-3 div a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+.grid-3 div:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); 
+}
+
+@media (max-width: 768px) {
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+}

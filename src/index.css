@@ -113,7 +113,6 @@ body::-webkit-scrollbar-thumb {
 .display-section .description {
   font-size: 21px;
   font-weight: 400;
-  color: black;
 }
 
 .display-section .button {
@@ -185,7 +184,7 @@ nav .link-styled {
   color: #000000cc;
 }
 
-.Landing-section.wrapper {
+.jumbotron-section.wrapper {
   margin-left: auto;
   margin-right: auto;
   max-width: 980px;
@@ -201,18 +200,18 @@ nav .link-styled {
   min-height: 831px;
 }
 
-.Landing-section .title {
+.jumbotron-section .title {
   color: #86868b;
   font-size: 17px;
   font-weight: 400;
   letter-spacing: -0.022em;
 }
 
-.Landing-section .logo {
+.jumbotron-section .logo {
   width: 140px;
 }
 
-.Landing-section .text {
+.jumbotron-section .text {
   display: inline-block;
   color: transparent;
   background-image: linear-gradient(180deg, #ffb6ff, #b344ff);
@@ -225,13 +224,12 @@ nav .link-styled {
   margin-bottom: 18px;
 }
 
-.Landing-section .description {
+.jumbotron-section .description {
   font-size: 21px;
   font-weight: 400;
-  color: wheat;
 }
 
-.Landing-section .links {
+.jumbotron-section .links {
   display: flex;
   justify-content: center;
   margin-top: 24px;
@@ -242,7 +240,7 @@ nav .link-styled {
   list-style: none;
 }
 
-.Landing-section .button {
+.jumbotron-section .button {
   background: #0071e3;
   color: #fff;
   cursor: pointer;
@@ -257,7 +255,7 @@ nav .link-styled {
   margin: 0 14px;
 }
 
-.Landing-section .link {
+.jumbotron-section .link {
   text-decoration: none;
   color: #2997ff;
   font-size: 21px;
@@ -266,7 +264,7 @@ nav .link-styled {
   cursor: pointer;
 }
 
-.Landing-section .iphone-img {
+.jumbotron-section .iphone-img {
   margin-right: -400px;
   height: 516px;
   position: absolute;
@@ -311,19 +309,19 @@ nav .link-styled {
   height: 100%;
 }
 
-.Data-section.wrapper {
+.sound-section.wrapper {
   width: 100%;
   color: #1d1d1f;
   background-color: #fbfbfd;
   height: 100vh;
 }
 
-.Data-section .body {
+.sound-section .body {
   max-width: 980px;
   margin: 0 auto;
 }
 
-.Data-section .content {
+.sound-section .content {
   max-width: 490px;
   width: 100%;
   padding: 200px 0;
@@ -333,14 +331,14 @@ nav .link-styled {
   opacity: 0;
 }
 
-.Data-section .title {
+.sound-section .title {
   color: #1d1d1f;
   font-size: 17px;
   font-weight: 400;
   margin-bottom: 0;
 }
 
-.Data-section .text {
+.sound-section .text {
   display: inline-block;
   color: transparent;
   background-image: linear-gradient(
@@ -359,12 +357,12 @@ nav .link-styled {
   margin-bottom: 18px;
 }
 
-.Data-section .description {
+.sound-section .description {
   font-size: 21px;
   font-weight: 400;
 }
 
-.Data-section .links {
+.sound-section .links {
   display: flex;
   justify-content: center;
   margin-top: 24px;
@@ -375,7 +373,7 @@ nav .link-styled {
   list-style: none;
 }
 
-.Data-section .button {
+.sound-section .button {
   background: #0071e3;
   color: #fff;
   cursor: pointer;
@@ -391,7 +389,7 @@ nav .link-styled {
   border: none;
 }
 
-.Data-section .link {
+.sound-section .link {
   text-decoration: none;
   color: #2997ff;
   font-size: 21px;
@@ -400,8 +398,9 @@ nav .link-styled {
   cursor: pointer;
 }
 
+
 @media screen and (max-width: 990px) {
-  .Landing-section .iphone-img,
+  .jumbotron-section .iphone-img,
   nav .link-styled {
     display: none;
   }
@@ -410,37 +409,54 @@ nav .link-styled {
     padding-left: 0;
   }
 
-  .Landing-section.wrapper,
-  .Data-section.wrapper,
+  .jumbotron-section.wrapper,
+  .sound-section.wrapper,
   .display-section.wrapper {
     padding-left: 20px;
     padding-right: 20px;
     box-sizing: border-box;
   }
 
-  .Landing-section .description,
-  .Data-section .description,
+  .jumbotron-section .description,
+  .sound-section .description,
   .display-section .description {
     font-size: 14px;
   }
 
-  .Landing-section.wrapper,
-  .Data-section .content,
+  .jumbotron-section.wrapper,
+  .sound-section .content,
   .display-section.wrapper {
     padding-top: 20px;
   }
 
   #webgi-canvas-container,
-  .Landing-section.wrapper {
+  .jumbotron-section.wrapper {
     min-height: 746px;
     height: 100vh;
   }
 
-  .Data-section.wrapper {
+  .sound-section.wrapper {
     height: 100vh;
   }
 
-  .Data-section .content {
+  .sound-section .content {
     max-width: 100%;
   }
 }
+
+@media (max-width: 480px){
+  .text{
+    font-size: 30px !important;
+  }
+
+  .c-text{
+    font-size: 40px !important;
+  }
+}
+
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

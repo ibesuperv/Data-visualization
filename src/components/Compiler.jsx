@@ -16,13 +16,13 @@ const Compiler = ({ embedUrl }) => {
   }, []);
 
   return (
-    <>
-    <h1 style={{textAlign:'center', fontSize:'80px', textDecoration:'underline'}}>C- COMPILER</h1>
-    <div className='compiler'>
+    <div  style={{backgroundColor:'white',margin:'0'}}>
+    <h1 className='c-text' style={{textAlign:'center', fontSize:'80px', color:'gray', textDecoration:'underline'}}>C- COMPILER</h1>
+    <div className='compiler' style={{padding:'20px'}}>
       {/* JDoodle Embed */}
       <div data-pym-src={embedUrl}></div>
     </div>
-    </>
+    </div>
   );
 };
 

@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { TypeAnimation } from 'react-type-animation';
 
-function DataSection() {
+function SoundSection() {
 
     const handleLearnMore=()=>{
         const element = document.querySelector(".display-section");
@@ -13,14 +14,12 @@ function DataSection() {
             }
         )
     }
-    return ( 
-        <div className="Data-section wrapper">
+    return (  
+        <div className="sound-section wrapper">
             <div className="body">
-                <div className="Data-section-content content">
-            <h2 className="title">  See the Data structure </h2>
-            <p className="text">
-
-            <TypeAnimation
+                <div className="sound-section-content content">
+            <h2 className="title"> See the Data structure</h2>
+            <p className="text"><TypeAnimation
   sequence={[
     // Same substring at the start will only be typed once, initially
     'Learn and Enjoy..',
@@ -34,15 +33,17 @@ function DataSection() {
   ]}
   speed={50}
   repeat={Infinity}
-/>
-
-            </p>
+/></p>
             <span className="description">Data structures are fundamental to computer science and software engineering, 
-                as they provide a means to manage large amounts of data efficiently.
-                </span>
+            as they provide a means to manage large amounts of data efficiently.</span>
             <ul className="links">
-                <li><button className="button">Visualize</button></li>
-                <li><a className="link" onClick={handleLearnMore}>Next</a></li>
+
+                                    <Link to='/dsa'>
+                                    <button className="button">
+                                        Visualize
+                                    </button>
+                                    </Link>
+                <li><a className="link" onClick={handleLearnMore}>Learn more</a></li>
             </ul>
                 </div>
             </div>
@@ -50,4 +51,4 @@ function DataSection() {
     );
 }
 
-export default DataSection;
+export default SoundSection;

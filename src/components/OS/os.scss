@@ -1,0 +1,272 @@
+
+.bg{
+    min-height: 100vh !important;
+    flex-grow: 1;
+    width: 100vw !important;
+    background-color: white !important;
+    color: black !important;
+    overflow: hidden !important;
+    display: flex ;
+    justify-content: center ;
+    align-items: center ;
+    cursor: default !important;
+
+    & p{
+        font-size: 60px;
+        font-weight: 300;
+    }
+
+ 
+}
+.input-div{
+  margin-top: 14vh;
+  margin-left: 30px;
+  width: 35%;
+  border-right: #000000 solid 2px;
+  padding-right: 30px;
+  height: 90%;
+  
+}
+
+
+
+$primary: #11998e;
+$secondary: #38ef7d;
+$white: #000;
+$gray: #9b9b9b;
+.form__group1 {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 25%;
+}
+
+.form__field1 {
+  font-family: inherit;
+  width: 100% ;
+  border: 0;
+  border-bottom: 2px solid $gray;
+  outline: 0;
+  font-size: 1rem;
+  color: $white;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+  cursor: pointer;
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+  }
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: $gray;
+}
+
+.form__field1:focus {
+  & .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: $primary;
+    font-weight:700;    
+  }
+  padding-bottom: 6px;  
+  font-weight: 700;
+   border-width: 3px;
+  border-image: linear-gradient(to right, $primary,$secondary);
+  border-image-slice: 1;
+}
+.form__field:required,
+.form__field:invalid {
+  box-shadow: none;
+}
+
+
+
+.butns{
+  display: flex;
+  margin: 60px auto;
+  gap: 20px;
+}
+
+.p-error{
+  margin-top: 10px !important;
+  text-align: center;
+}
+.error-message{
+  font-size: 30px !important;
+  color: red;
+}
+
+.binary-main{
+  width: 60%;
+  height: 100%;
+  margin-top: 15vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.top-element-text{
+  font-size: 40px !important;
+}
+
+.binary-box{
+    width: 60px;
+    height: 60px;
+    background-color: #4A90E2;
+    color: white;
+    border-radius: 7px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.binary-boxes{
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+
+@media (max-width: 480px) {
+  
+  .bg{
+    display: flex;
+    flex-direction: column;
+    height: 200vh !important;
+  }
+  .input-div{
+    width: 100%;
+  }
+  .binary-boxes{
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+
+}
+  
+}
+@media (max-width: 769px) {
+    .input-div p{
+        font-size: 40px;
+    }
+    .binary-box{
+        width: 40px;
+        height: 40px;
+    }
+    
+
+}
+
+.algoinput{
+    display: inline-block;
+    justify-content: center;
+    gap: 40px;
+}
+
+
+
+.process-input{
+    display: flex;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    gap: 45px;
+    padding-bottom: 20px;
+}
+
+.table{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.stats-table {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .stats-table table {
+    width: 70%;
+    border-collapse: collapse;
+    font-size: 1rem;
+  }
+  
+  .stats-table th,
+  .stats-table td {
+    padding: 10px;
+    border: 1px solid #2d3436;
+    text-align: center;
+  }
+
+  .average-stats p,.stats p{
+    font-size: 1rem !important;
+  }
+
+
+  
+  .gantt-chart {
+    display: flex;
+    justify-content: flex-start;
+    border: 2px solid #2d3436;
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #dfe6e9;
+    overflow-x: auto;
+  }
+  
+  .process-bar {
+    height: 50px;
+    background-color: #0984e3;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 5px;
+    border-radius: 4px;
+    transition: all 0.5s ease;
+  }
+  
+  .process-bar.active {
+    background-color: #00b894;
+  }
+  
+  .idle-time {
+    height: 50px;
+    background-color: #b2bec3;
+    margin: 0 5px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2d3436;
+    font-weight: bold;
+  }
+  
+
+  

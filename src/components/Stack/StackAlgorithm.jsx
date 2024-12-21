@@ -1,126 +1,127 @@
-import './stack.css'
+import './stack.scss'
+import React, { useState } from 'react';
 
 function StackAlgorithm() {
-    return (
-        <div className="s-algorithm" style={{cursor:'default'}}>
-            <h1 className='s-algorithm-header'>
-                ALGORITHM</h1>
-            <div className="algo-holder">
-                <div className="basic">
+  const [selectedOperation, setSelectedOperation] = useState(null);
 
-                    <p>Basic Operations On Stack</p>
-                    <div>
+  const toggleOperation = (operation) => {
+    setSelectedOperation(selectedOperation === operation ? null : operation);
+  };
 
-                    <ul>
-                        <li>push()</li>
-                        <li>pop()</li>
-                        <li>top()</li>
-                        <li>isEmpty()</li>
-                        <li>isFull()</li>
-                    </ul>
-                    </div>
-                </div>
-                <hr />
-<div className="push  algo-card" style={{marginTop:'50px'}} >
-<h2 className='h2-soperation' > Push Operation in Stack :</h2>
-    <p>Adds an item to the stack.
-         If the stack is full, then it is said to be an Overflow condition.</p>
-<details>
-<summary>
-   <span id="open">read more</span> 
-   <span id="close">close</span> 
- </summary>
+  return (
+    <div className="stack-container">
+      <header className="header">
+        <h1>Stack Data Structure</h1>
+        <p>Master the core operations of a stack</p>
+      </header>
 
-         <h4>Algorithm for Push Operation:</h4>
-
-         <ul>
-            <li>Before pushing the element to the stack, we check if the stack is full .</li>
-            <li>If the stack is full (top == capacity-1) ,
-                 then Stack Overflows and we cannot insert the element to the stack.</li>
-            <li>Otherwise, we increment the value of top by 1 (top = top + 1)
-                 and the new value is inserted at top position .</li>
-            <li>The elements can be pushed into the stack till we reach the capacity of the stack.</li>
-         </ul>
-</details>
-</div>
-
-<div className="pop algo-card" style={{marginTop:'20px'}} >
-<h2 className='h2-soperation' > Pop Operation in Stack :</h2>
-    <p>Removes an item from the stack. The items are popped in the reversed order in which they are pushed.
-         If the stack is empty, then it is said to be an Underflow condition.</p>
-<details>
-<summary>
-   <span id="open">read more</span> 
-   <span id="close">close</span> 
- </summary>
-
-         <h4>Algorithm for Pop Operation :</h4>
-         <ul>
-            <li>Before popping the element from the stack, we check if the stack is empty .</li>
-            <li>If the stack is empty (top == -1), then Stack Underflows and we cannot remove any element from the stack.</li>
-            <li>Otherwise, we store the value at top, decrement the value of top by 1 (top = top – 1) and return the stored top value.
-            </li>
-         </ul>
-</details>
-</div>
-<div className="top algo-card" style={{marginTop:'20px'}} >
-    <h2 className='h2-soperation' >Top or Peek Operation in Stack :</h2>
-
-    <p>Returns the top element of the stack.</p>
-<details>
-<summary>
-   <span id="open">read more</span> 
-   <span id="close">close</span> 
- </summary>
-
-    <h4>Algorithm for Top Operation</h4>
-
-    <ul>
-        <li>Before returning the top element from the stack, we check if the stack is empty.</li>
-        <li>If the stack is empty (top == -1), we simply print “Stack is empty”.</li>
-        <li>Otherwise, we return the element stored at index = top .
-        </li>
-    </ul>
-</details>
-</div>
-
-<div className="isEmpty algo-card" style={{marginTop:'20px'}} >
-    <h2 className='h2-soperation' >isEmpty Operation in Stack :</h2>
-    <p>Returns true if the stack is empty, else false.</p>
-    <details>
-    <summary>
-   <span id="open">read more</span> 
-   <span id="close">close</span> 
- </summary>
-
-    <h4>Alogorithm for isEmpty Operation:</h4>
-    <ul>
-        <li>Check for the value of top in stack.</li>
-        <li>If (top == -1) , then the stack is empty so return true .</li>
-        <li>Otherwise, the stack is not empty so return false .</li>
-    </ul>
-    </details>
-</div>
-<div className="isFull algo-card" style={{marginTop:'20px'}} >
-    <h2 className='h2-soperation' >isFull Operation in Stack :</h2>
-    <p>Returns true if the stack is full, else false.</p>
-    <details>
-    <summary>
-   <span id="open">read more</span> 
-   <span id="close">close</span> 
- </summary>
-
-    <h4>Algorithm for isFull Operation :</h4>
-    <ul>
-        <li>Check for the value of top in stack.</li>
-        <li>If (top == capacity-1), then the stack is full so return true.</li>
-        <li>Otherwise, the stack is not full so return false.</li>
-    </ul>
-    </details>
-</div>
-            </div>
+      <div className="main-content">
+        <div className="operations-list">
+          <h2>Operations</h2>
+          <ul>
+            <li onClick={() => toggleOperation('push')}>Push()</li>
+            <li onClick={() => toggleOperation('pop')}>Pop()</li>
+            <li onClick={() => toggleOperation('top')}>Top()</li>
+            <li onClick={() => toggleOperation('isEmpty')}>isEmpty()</li>
+            <li onClick={() => toggleOperation('isFull')}>isFull()</li>
+          </ul>
         </div>
-    );
+
+        <div className="operation-details">
+          {selectedOperation === 'push' && (
+            <div className="detail-card">
+              <h3 className="operation-title">Push Operation</h3>
+              <p>Adds an item to the stack. If the stack is full, it results in an overflow.</p>
+              <details>
+                <summary style={{paddingLeft:'30px'}}>Read More</summary>
+                <ul>
+                  <li>Check if the stack is full.</li>
+                  <li>If full, the stack overflows and the element cannot be added.</li>
+                  <li>If not full, increment the top and insert the element at that position.</li>
+                </ul>
+              </details>
+            </div>
+          )}
+          {selectedOperation === 'pop' && (
+            <div className="detail-card">
+              <h3 className="operation-title">Pop Operation</h3>
+              <p>Removes an item from the stack. Items are popped in reverse order. If the stack is empty, it results in an underflow.</p>
+              <details>
+                <summary style={{paddingLeft:'30px'}}>Read More</summary>
+                <ul>
+                  <li>Check if the stack is empty.</li>
+                  <li>If empty, the stack underflows and no element can be removed.</li>
+                  <li>If not empty, decrement the top and return the element stored at that position.</li>
+                </ul>
+              </details>
+            </div>
+          )}
+          {selectedOperation === 'top' && (
+            <div className="detail-card">
+              <h3 className="operation-title">Top Operation</h3>
+              <p>Returns the top element of the stack without removing it.</p>
+              <details>
+                <summary style={{paddingLeft:'30px'}}>Read More</summary>
+                <ul>
+                  <li>Check if the stack is empty.</li>
+                  <li>If empty, return "Stack is empty".</li>
+                  <li>If not empty, return the element at the top position.</li>
+                </ul>
+              </details>
+            </div>
+          )}
+          {selectedOperation === 'isEmpty' && (
+            <div className="detail-card">
+              <h3 className="operation-title">isEmpty Operation</h3>
+              <p>Returns true if the stack is empty, otherwise false.</p>
+              <details>
+                <summary style={{paddingLeft:'30px'}}>Read More</summary>
+                <ul>
+                  <li>Check if the top value is -1.</li>
+                  <li>If top == -1, return true (stack is empty).</li>
+                  <li>If top != -1, return false (stack is not empty).</li>
+                </ul>
+              </details>
+            </div>
+          )}
+          {selectedOperation === 'isFull' && (
+            <div className="detail-card">
+              <h3 className="operation-title">isFull Operation</h3>
+              <p>Returns true if the stack is full, otherwise false.</p>
+              <details>
+                <summary style={{paddingLeft:'30px'}}>Read More</summary>
+                <ul>
+                  <li>Check if the top value equals capacity-1.</li>
+                  <li>If top == capacity-1, return true (stack is full).</li>
+                  <li>If top != capacity-1, return false (stack is not full).</li>
+                </ul>
+              </details>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default StackAlgorithm;
+
+
+
+
+
+
+
+
+
+
+
+{/* <div className="algorithmm">
+<StackAlgorithm />
+</div>
+
+<div className="ai-holder">
+{/* <Ai header="Real world Applications of Stack" search={"List applications of stack in bullet points."} /> 
+</div>
+
+<Compiler embedUrl="https://www.jdoodle.com/embed/v1/a6668178bc43c646" /> */}

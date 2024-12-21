@@ -10,7 +10,7 @@ import {
     BloomPlugin,
     GammaCorrectionPlugin,
 } from "webgi";
-import gsap from 'gsap';
+import gsap from 'gsap'; 
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { scrollAnimation } from '../lib/scroll-animation';
 

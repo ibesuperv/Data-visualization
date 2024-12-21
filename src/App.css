@@ -1,12 +1,304 @@
-.compiler{
-    background-color: white;
-    min-height: 80vh;
-    margin: 100px;
-    border-radius: 20px;
-    padding: 80px;
-    margin-bottom: 0;
+
+.common-container {
+    background-color: transparent;
+    min-height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    cursor: default;
 }
 
-.App{
-    background-color: transparent;
+.common-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & .common-header-p {
+        padding-top: 100px;
+        font-size: 60px;
+        font-weight: bold;
+        color: rgb(104, 103, 103);
+    }
+
+    & .common-input {
+        width: 100%;
+        padding: 30px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+
+        color: black;
+
+
+        & p {
+            font-size: 25px;
+            padding: 0px 5px 0px 0px;
+        }
+
+        & input {
+            height: 20px;
+            border-radius: 30px;
+            border: solid 3px;
+            padding: 25px;
+            font-size: 19px;
+        }
+
+        & .common-size,
+        .common-element {
+            display: flex;
+            gap: 20px;
+        }
+    }
+
+    & .common-buttons {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 200px;
+
+        & button {
+            width: auto;
+            height: 60px;
+            border-radius: 20px;
+            background-color: transparent;
+            border: solid 5px rgb(250, 213, 213);
+            font-size: 18px;
+            padding: 10px 30px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        & button:hover{
+            background-color: black;
+            color: wheat;
+        }
+    }
 }
+
+
+.common-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 10%;
+    
+}
+
+.common {
+    width: 300px;
+    border-radius: 0 0 20px 20px;
+    border-left: 7px solid black;
+    border-right: 7px solid black;
+    border-bottom: 7px solid black;
+    overflow: hidden;
+}
+
+.e-msg {
+    color: black;
+    text-align: center;
+    font-size: 30px;
+}
+
+.p-error {
+    width: 100%;
+    min-height: 50px;
+}
+.common-item-color{
+    background-color: rgb(243, 182, 210);
+}
+
+.bg {
+    background-size: 100% 100%;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 150px;
+    background-position: 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+background: common-gradient(132deg, rgb(251, 251, 255) 0%, rgb(215, 223, 252) 100%);;
+}
+
+
+input:focus {
+    outline: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+
+h2,
+details {
+    display: inline;
+}
+
+details {
+    position: relative;
+}
+
+details summary {
+    display: block;
+    cursor: pointer;
+    color: red;
+    /* margin-bottom: 40px; */
+}
+
+details summary:focus {
+    outline: none;
+}
+
+details[open] {
+    display: block;
+    padding-bottom: 25px;
+    animation: open .2s common;
+}
+
+details[open] summary {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+details #open {
+    padding-left: 5px;
+    text-align: middle;
+}
+
+details #open:after {
+    display: inline-block;
+    position: relative;
+    top: -3px;
+    padding-left: 8px;
+    content: "\00bb";
+    transform: rotate(90deg);
+}
+
+details[open] #open {
+    display: none;
+}
+
+details #close {
+    display: none;
+}
+
+details[open] #close {
+    display: block;
+}
+
+::-webkit-details-marker {
+    display: none;
+}
+
+
+
+
+
+@keyframes open {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.algorithmm {
+    background-color: white;
+    color: black;
+    width: 90vw;
+    border-radius: 30px;
+    height: auto;
+    margin: 0 auto;
+    padding: 40px 100px;
+}
+
+.s-algorithm {
+    width: 100%;
+    height: auto;
+
+    & h1 {
+        text-align: center;
+        font-size: 60px;
+        color: gray;
+    }
+
+    & .basic {
+        margin: 0 auto;
+        font-size: 20px;
+        width: 100%;
+        border-radius: 40px;
+        border: solid black 2px;
+        padding: 20px 30px;
+        background-color: antiquewhite;
+        margin-bottom: 20px;
+
+        & p {
+            text-align: center;
+            font-size: 30px;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        & div {
+            margin: 0 auto;
+            width: 40%;
+        }
+    }
+}
+
+.algo-card {
+    & h2 {
+        text-decoration: underline;
+        font-size: 35px;
+    }
+
+    & p {
+        font-size: 20px;
+    }
+
+    & li {
+        line-height: 30px;
+    }
+}
+
+
+/* 
+.bg {
+    background-size: 100% 100%;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 150px;
+    background-position: 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+background: common-gradient(132deg, rgb(251, 251, 255) 0%, rgb(215, 223, 252) 100%);;
+}
+
+ */
+
+ .bg{
+    background-color: rgb(217, 215, 212);
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

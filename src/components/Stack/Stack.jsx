@@ -1,13 +1,14 @@
-// Stack.jsx
 import React, { useState } from 'react';
+import { Button } from '@mui/material';
+import './stack.scss';
 import { motion, AnimatePresence } from 'framer-motion';
-import './stack.css';
+import StackAlgorithm from './StackAlgorithm';
+import Nav from '../Nav';
 import Compiler from '../Compiler';
-import StackAlgorithm from './stackAlgorithm';
-import Ai from '../Ai';
+
 
 const Stack = () => {
-  const [stack, setStack] = useState([]);
+  const [stack, setStack] = useState([1, 2, 3, 4]);
   const [input, setInput] = useState("");
   const [maxSize, setMaxSize] = useState(5);
   const [message, setMessage] = useState("");
@@ -33,6 +34,7 @@ const Stack = () => {
 
   const handleMaxSizeChange = (e) => {
     const newSize = Number(e.target.value);
+    setStack([]);
     if (newSize > 0 && newSize <= 6) {
       setMaxSize(newSize);
       setMessage("");
@@ -41,49 +43,101 @@ const Stack = () => {
     }
   };
 
+  const topElement = stack.length > 0 ? stack[0] : "Stack is empty";
+
   return (
-    <>
-      <div className="bg" >
-        <div className='stack-container'>
-          <div className="stack-header">
-            <p className='stack-header-p'>STACK</p>
-            <div className="stack-input">
-              <div className="stack-size" >
-                <p style={{textAlign:'center', margin:'10px'}}>Enter the stack size:</p>
-                <input
-                  type="number"
-                  value={maxSize}
-                  onChange={handleMaxSizeChange}
-                  min="1"
-                />
-
-
-              </div>
-              <div className="stack-element"  >
-                <p style={{textAlign:'center',margin:'10px'}}>Enter the element:</p>
-                <input
-                  type="text"
-                  value={input}
-                  onChange={(e) => setInput(e.target.value)}
-                  placeholder="Enter a stack item"
-                />
-              </div>
-            </div>
-            <div className="stack-buttons">
-              <motion.button   whileTap={{ scale: 0.85 }} onClick={handleAdd}>Add to Stack</motion.button>
-              <motion.button  whileTap={{ scale: 0.85 }} onClick={handleRemove}>Remove from Stack</motion.button>
-            </div>
+    <div style={{background:'white'}}>
+    <Nav/>
+      <div className="bg">
+        <div className="input-div">
+        <p>Stack</p>
+          <div className="form__group field">
+            <input
+              type="number"
+              className="form__field"
+              placeholder="Max size of Stack"
+              name="name"
+              id='name'
+              value={maxSize}
+              onChange={handleMaxSizeChange}
+              min="1"
+              required
+            />
+            <label htmlFor="name" className="form__label">Max size of Stack</label>
+          </div>
+          <div className="form__group field" style={{ marginTop: '20px' }}>
+            <input
+              type="input"
+              className="form__field"
+              placeholder="Enter Your Elements"
+              name="name"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              id='name'
+              required
+            />
+            <label htmlFor="name" className="form__label">Elements</label>
           </div>
 
-          <div className="p-error" >
+          <div className='butns'>
+            <Button
+              variant="contained"
+              sx={{
+                backgroundColor: '#0077FF',
+                color: '#fff',
+                '&:hover': {
+                  backgroundColor: '#005BBB',
+                  transform: 'scale(1.05)',
+                },
+                fontSize: { xs: '1rem', sm: '1.2rem', md: '1.5rem' },
+                padding: { xs: '10px 20px', sm: '12px 24px', md: '15px 30px' },
+                width: { xs: '100%', sm: 'auto' },
+                height: { xs: '40px', sm: '50px', md: '60px' }, // Adjust height for responsive design
+                marginRight: { xs: 0, sm: '10px' },
+                marginBottom: '10px',
+              }}
+              onClick={handleAdd}
+            >
+              Push
+            </Button>
+
+            <Button
+              variant="contained"
+              sx={{
+                backgroundColor: '#FF5733',
+                color: '#fff',
+                '&:hover': {
+                  backgroundColor: '#C74122',
+                  transform: 'scale(1.05)',
+                },
+                fontSize: { xs: '1rem', sm: '1.2rem', md: '1.5rem' },
+                padding: { xs: '10px 20px', sm: '12px 24px', md: '15px 30px' },
+                width: { xs: '100%', sm: 'auto' },
+                height: { xs: '40px', sm: '50px', md: '60px' }, // Same height for the button
+              }}
+              onClick={handleRemove}
+            >
+              Pop
+            </Button>
+          </div>
+          <div className="p-error">
             {message && (
-              <p className='e-msg'>{message}</p>
+              <p className='error-message'>{message}</p>
             )}
           </div>
 
-          <div className="stack-center">
+        </div>
+
+
+        <div className="stack-main">
+          
+        <div className="top-element">
+            <p className='top-element-text'>
+              Top: {topElement}
+            </p>
+          </div>
             <div
-              className='stack'
+              className='common'
               style={{
                 height: `${80 * maxSize}px`,
                 overflowY: 'auto',
@@ -99,17 +153,19 @@ const Stack = () => {
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -50 }}
-                    transition={{ duration: 0.3 }}
-                    className='stack-item-color'
+                    transition={{ duration: 0.4 }}
+                    className='common-item'
                     style={{
-                      color: 'black',
+                      color: '#fff',
+                      backgroundColor: '#2D9CDB',
                       padding: '20px',
                       margin: '5px auto',
-                      borderRadius: '5px',
-                      fontSize: '18px',
-                      width: '190px',
+                      borderRadius: '8px',
+                      fontSize: '20px',
+                      width: '200px',
                       height: '60px',
                       textAlign: 'center',
+                      boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
                     }}
                   >
                     {item}
@@ -118,17 +174,16 @@ const Stack = () => {
               </AnimatePresence>
             </div>
           </div>
-        </div>
-        <div className="algorithmm">
-                <StackAlgorithm/>
-        </div><div className="ai-holder">
-                <Ai name="STACK" search={"List applications of stack in bullet points."} />
-        </div>
-        <Compiler embedUrl="https://www.jdoodle.com/embed/v1/a6668178bc43c646" />
 
+        
       </div>
-    </>
+
+      <StackAlgorithm/>
+      <Compiler embedUrl="https://www.jdoodle.com/embed/v1/a6668178bc43c646" />
+
+    </div>
   );
 };
 
 export default Stack;
+ 

@@ -8,7 +8,7 @@ t1.to(position,{
     y:-10.74,
     z:-5.93,
     scrollTrigger:{
-        trigger:'.Data-section',
+        trigger:'.sound-section',
         start:"top bottom",
         end:"top top",
         scrub:2,
@@ -18,27 +18,27 @@ t1.to(position,{
 }).to(target,{
     x:5.718127794,
     y:9.1689587488,
-    z:9.4783965874,
+    z:8.4783965874,
     scrollTrigger:{
-        trigger:'.Data-section',
+        trigger:'.sound-section',
         start:"top bottom",
         end:"top top",
         scrub:2,
         immediateRender:false
     },
-}).to(".Landing-section",{
+}).to(".jumbotron-section",{
     opacity:0,
     scrollTrigger:{
-        trigger:'.Data-section',
+        trigger:'.sound-section',
         start:"top bottom",
         end:"top top",
         scrub:2,
         immediateRender:false
     },
-}).to(".Data-section-content",{
+}).to(".sound-section-content",{
     opacity:1,
     scrollTrigger:{
-        trigger:'.Data-section',
+        trigger:'.sound-section',
         start:"top bottom",
         end:"top top",
         scrub:2,
