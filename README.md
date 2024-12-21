@@ -114,7 +114,7 @@ src/
 ### Development
 
 ```bash
-npm start
+npm run dev
 ```
 
 ### Build for Production
@@ -140,12 +140,6 @@ npm test
 - **Loader Animation**: Custom SVG-based animation
 - **Misc**:
   - `react-animated-cursor`
-
----
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
 
 ---
 
