@@ -8,6 +8,10 @@ function Dsa() {
     const handleNavigation = (path) => {
         navigate(path);  // Navigate to the provided path
     };
+    const handleOpenBST = () => {
+        window.open("/BST.html"); // Open the BST.html file in a new tab
+      };
+    
 
     return (
         <>
@@ -26,8 +30,12 @@ function Dsa() {
                 <div onClick={() => handleNavigation('/dsa/binary-search')} className="child4">
                     <h3 style={{color:'black'}}>Binary Search</h3>
                 </div>
+
                 <div onClick={() => handleNavigation('/dsa/Os-Scheduling')} className="child5">
                     <h3 style={{color:'black'}}>OS Scheduling</h3>
+                </div>
+                <div onClick={handleOpenBST} className="child6">
+                    <h3 style={{color:'black'}}>BST</h3>
                 </div>
             </div>
         </div>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './holder.css'
 function Nav() {
     return (
-        <nav className="nav-wrapper" style={{background:'white',position:'absolute',top:'0',left:'0',position:'fixed'}}>
+        <nav className="nav-wrapper" style={{background:'white',position:'fixed',top:'0',left:'0'}}>
             <div className="nav-content">
                 <ul className="list-styled">
                   

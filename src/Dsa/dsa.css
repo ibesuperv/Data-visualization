@@ -50,6 +50,9 @@
 .grid-3 div:nth-child(5) {
     background-color: #FFB6C1;
 }
+.grid-3 div:nth-child(6) {
+    background-color: #ecb85e;
+}
 
 .grid-3 div::before {
     content: '';
@@ -79,6 +82,9 @@
 
 .grid-3 div:nth-child(5)::before {
     background-image: url('/Os-scheduling.png');
+}
+.grid-3 div:nth-child(6)::before {
+    background-image: url('/image.png');
 }
 
 .grid-3 div h3 {
