@@ -50,9 +50,9 @@ Make sure you have the following installed:
 
 4. Start the development server:
    ```bash
-   npm start
+   npm run dev
    # or
-   yarn start
+   yarn run dev
    ```
 
 ---
