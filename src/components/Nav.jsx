@@ -10,7 +10,8 @@ function Nav() {
                     <li><Link className="link-styled-li" style={{color:'black',textDecoration:'none'}} to="/" >Home</Link></li>
                     <li><Link to='/dsa' className="link-styled-li" style={{color:'black',textDecoration:'none'}}>Visualize</Link></li>
                     <li><Link to='/ai' className="link-styled-li" style={{color:'black',textDecoration:'none'}}>Ai</Link></li>
-                    
+                    <li><Link to='/learning' className="link-styled-li" style={{color:'black',textDecoration:'none'}}>Platfrom based learning</Link></li>
+                
                     <li><Link to='/contact' className="link-styled-li" style={{color:'black',textDecoration:'none'}}>Contact</Link></li>
                 
                 </ul>

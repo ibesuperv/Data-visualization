@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './dsa.css';
 import Nav from '../components/Nav';
 
@@ -37,6 +37,7 @@ function Dsa() {
                 <div onClick={handleOpenBST} className="child6">
                     <h3 style={{color:'black'}}>BST</h3>
                 </div>
+                
             </div>
         </div>
         </>
