@@ -55,7 +55,7 @@ function Ai() {
             <div className="text-center space-y-4 mb-6">
                 <Link to="/">
                     <button
-                        className="absolute top-7 left-4 px-4 py-2 bg-gradient-to-r from-red-500 to-pink-500 text-white rounded-lg shadow-md hover:from-red-600 hover:to-pink-600 focus:outline-none transition duration-300 ease-in-out"
+                        className="absolute top-10 left-4 px-4 py-2 bg-gradient-to-r from-red-500 to-pink-500 text-white rounded-lg shadow-md hover:from-red-600 hover:to-pink-600 focus:outline-none transition duration-300 ease-in-out"
                     >
                         Return to Home
                     </button>
