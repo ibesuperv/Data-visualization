@@ -11,7 +11,7 @@ function Learning() {
 <div className="Dsa-div">
             <div className="grid-3">
                <Link to='/learning/appication'> <div  className="child1">
-                    <h3 style={{color:'black'}}>Applclation based Learning</h3>
+                    <h3 style={{color:'black'}}>Application based Learning</h3>
                 </div>
                 </Link>
                 <div onClick={() => handleNavigation('/practice')} className="child2">
